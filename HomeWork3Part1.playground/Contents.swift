@@ -318,8 +318,19 @@ for cart in carts {
  
  */
 
+func printOnlyIntel() {
+    var index = 1
+    print("------------------- Intel -------------------------------")
+    
+    for cart in carts {
+        if cart.processor == "Intel" {
+            print("\(index). Назва товару: \(cart.productName)")
+            index += 1
+        }
+    }
+}
 
-
+printOnlyIntel()
 
 /*
  
