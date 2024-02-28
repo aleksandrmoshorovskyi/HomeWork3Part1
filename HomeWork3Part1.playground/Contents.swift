@@ -66,8 +66,8 @@ for index in 0 ... productsCount {
     let item = carts[index]
     
     let s1 = "------------------- \(index + 1) -------------------------------"
-    let s2 = "Назва товару: \(item.productName), Ціна: \(item.price) \(item.currency)"
-    let s3 = "Сокет: \(item.socet), Процессор: \(item.processor)"
+    let s2 = " Назва товару: \(item.productName), Ціна: \(item.price) \(item.currency)"
+    let s3 = " Сокет: \(item.socet), Процессор: \(item.processor)"
     let s4 = "------------------------------------------------------"
     
     print(s1, s2, s3, s4, "\n", separator: "\n")
@@ -120,9 +120,20 @@ for cart in carts {
     ------------------------------------------------------
  */
 
+var indexWhile = 0
 
-
-
+while indexWhile < carts.count {
+    
+    let item = carts[indexWhile]
+    
+    let s1 = "------------------- \(indexWhile + 1) -------------------------------"
+    let s2 = " Назва товару: \(item.productName)"
+    let s3 = " Ціна: \(item.price) \(item.currency)"
+    let s4 = "------------------------------------------------------"
+    
+    print(s1, s2, s3, s4, "\n", separator: "\n")
+    indexWhile += 1
+}
 
 /*
  
