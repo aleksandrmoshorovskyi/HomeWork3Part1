@@ -443,10 +443,15 @@ print(s1, s2, s3, "\n", separator: "\n")
  
  */
 
+enum ProcessorType: String {
+    case intel = "Intel"
+    case amd = "AMD"
+}
 
+var procType: ProcessorType = .intel
 
-
-
+print(procType)
+print("\n")
 
 /*
  
@@ -461,9 +466,16 @@ print(s1, s2, s3, "\n", separator: "\n")
  
  */
 
+enum Currency: String {
+    case uah = "UAH"
+    case usd = "USD"
+    case eur = "EUR"
+}
 
+var cur: Currency = .uah
 
-
+print(cur)
+print("\n")
 
 /*
  
