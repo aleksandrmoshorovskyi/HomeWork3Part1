@@ -496,10 +496,19 @@ print("\n")
  
  */
 
+struct MotherBoard {
+    var socet = "sAM5"
+    var processor: ProcessorType = .amd
+}
 
+var motherBoard = MotherBoard()
+print("\(motherBoard.socet) \(motherBoard.processor)")
 
+motherBoard.socet = "s1700"
+motherBoard.processor = .intel
+print("\(motherBoard.socet) \(motherBoard.processor)")
 
-
+print("\n")
 
 /*
  
@@ -516,7 +525,23 @@ print("\n")
  
  */
 
+class Product {
+    var name = "Asus TUF Gaming B650-Plus Wi-Fi"
+    var price = 9799.00
+    var currency: Currency = .uah
+    var motherBoard: MotherBoard = .init(socet: "sAM5", processor: .amd)
+    
+    func prtProduct() {
+        print("\(product.name) - \(String(format: "%.2f", product.price)) \(product.currency) \("(")\(product.motherBoard.socet), \(product.motherBoard.processor)\(")")")
+    }
+}
 
+var product = Product()
+product.prtProduct()
 
+product.name = "Asus TUF Gaming B760-Plus Wi-Fi D4"
+product.price = 299
+product.currency = .usd
+product.motherBoard = .init(socet: "s1700", processor: .intel)
 
-
+product.prtProduct()
