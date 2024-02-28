@@ -152,9 +152,21 @@ while indexWhile < carts.count {
     ------------------------------------------------------
  */
 
+var indexRepeateWhile = 0
 
-
-
+repeat {
+    
+    let item = carts[indexRepeateWhile]
+    
+    let s1 = "------------------- \(indexRepeateWhile + 1) -------------------------------"
+    let s2 = " Назва товару: \(item.productName)"
+    let s3 = " Сокет: \(item.socet)"
+    let s4 = "------------------------------------------------------"
+    
+    print(s1, s2, s3, s4, "\n", separator: "\n")
+    indexRepeateWhile += 1
+    
+} while indexRepeateWhile < carts.count
 
 /*
  
