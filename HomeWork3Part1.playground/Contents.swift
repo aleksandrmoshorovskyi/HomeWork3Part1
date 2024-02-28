@@ -17,11 +17,13 @@ import Foundation
  */
 
 // Псевдонім для зберігання деталей товару
-typealias ProductInfo = (String, Double, String, String, String)
+//typealias ProductInfo = (String, Double, String, String, String)
+typealias ProductInfo = (productName: String, price: Double, currency: String, socet: String, processor: String)
 
 // Користувач в інтернет-магазині додав наступні товари у кошик,
 // але ще не визначився, яку саме відеократу придбати:
-let cart: [ProductInfo] = [
+//let cart: [ProductInfo] = [
+let carts: [ProductInfo] = [
     (productName: "ASRock H310CV-HDV", price: 1717.0, currency: "₴", socet: "s1151", processor: "Intel"),
     (productName: "Asus Prime H310M-E R2.0", price: 2299.0, currency: "₴", socet: "s1151", processor: "Intel"),
     (productName: "Gigabyte H310M H", price: 1939.0, currency: "₴", socet: "s1151", processor: "Intel"),
@@ -55,12 +57,13 @@ let cart: [ProductInfo] = [
     ------------------------------------------------------
  */
 
-let productsCount = cart.count - 1
+let productsCount = carts.count - 1
 
 for index in 0 ... productsCount {
     
     //(productName: "ASRock H310CV-HDV", price: 1717.0, currency: "₴", socet: "s1151", processor: "Intel")
-    let item = (productName: cart[index].0, price: cart[index].1, currency: cart[index].2, socet: cart[index].3, processor: cart[index].4)
+    //let item = (productName: carts[index].0, price: cart[index].1, currency: cart[index].2, socet: cart[index].3, processor: cart[index].4)
+    let item = carts[index]
     
     let s1 = "------------------- \(index + 1) -------------------------------"
     let s2 = "Назва товару: \(item.productName), Ціна: \(item.price) \(item.currency)"
@@ -87,9 +90,18 @@ for index in 0 ... productsCount {
     ------------------------------------------------------
  */
 
+var index = 1
 
-
-
+for cart in carts {
+    
+    let s1 = "------------------- \(index) -------------------------------"
+    let s2 = " Назва товару: \(cart.productName)"
+    let s3 = " Процессор: \(cart.processor)"
+    let s4 = "------------------------------------------------------"
+    
+    print(s1, s2, s3, s4, "\n", separator: "\n")
+    index += 1
+}
 
 /*
  
