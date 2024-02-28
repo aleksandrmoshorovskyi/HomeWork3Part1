@@ -257,7 +257,30 @@ for cart in carts {
     
  */
 
+var indexS = 1
 
+for cart in carts {
+    
+    let processorStringValue = cart.processor
+    
+    let s1 = "------------------- \(indexS) -------------------------------"
+    let s2 = " Назва товару: \(cart.productName), Ціна: \(cart.price) \(cart.currency)"
+    let s3 = "------------------------------------------------------"
+
+    switch processorStringValue {
+    case "Intel":
+        print("- друк інформації для товару з процесором Intel")
+        print(s1, s2, s3, "\n", separator: "\n")
+    case "AMD":
+        print("- друк інформації для товару з процесором AMD")
+        print(s1, s2, s3, "\n", separator: "\n")
+    default:
+        print("- друк пустої строки")
+        print("\n")
+    }
+    
+    indexS += 1
+}
 
 /*
  
