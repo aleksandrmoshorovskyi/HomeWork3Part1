@@ -361,10 +361,21 @@ printOnlyIntel()
  
  */
 
+print("\n")
 
+func printOnlyForPriceLess(maxPrice: Double) {
+    var index = 1
+    print("------------------- Товари з ціною менше \(String(format: "%.2f", maxPrice)) -------------------------------")
+    
+    for cart in carts {
+        if cart.price < maxPrice {
+            print("\(index). Назва товару: \(cart.productName), Ціна: \(String(format: "%.2f", cart.price)) \(cart.currency)")
+            index += 1
+        }
+    }
+}
 
-
-
+printOnlyForPriceLess(maxPrice: 3000)
 
 /*
  
