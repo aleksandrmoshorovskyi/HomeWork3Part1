@@ -55,9 +55,20 @@ let cart: [ProductInfo] = [
     ------------------------------------------------------
  */
 
+let productsCount = cart.count - 1
 
-
-
+for index in 0 ... productsCount {
+    
+    //(productName: "ASRock H310CV-HDV", price: 1717.0, currency: "₴", socet: "s1151", processor: "Intel")
+    let item = (productName: cart[index].0, price: cart[index].1, currency: cart[index].2, socet: cart[index].3, processor: cart[index].4)
+    
+    let s1 = "------------------- \(index + 1) -------------------------------"
+    let s2 = "Назва товару: \(item.productName), Ціна: \(item.price) \(item.currency)"
+    let s3 = "Сокет: \(item.socet), Процессор: \(item.processor)"
+    let s4 = "------------------------------------------------------"
+    
+    print(s1, s2, s3, s4, "\n", separator: "\n")
+}
 
 /*
  
