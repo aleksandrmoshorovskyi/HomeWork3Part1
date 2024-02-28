@@ -399,9 +399,31 @@ printOnlyForPriceLess(maxPrice: 3000)
  
  */
 
+print("\n")
 
+func mostExpensive(for processorType: String) -> ProductInfo {
+    
+    var highestPrice = 0.0
+    //var mostExpensiveItem = carts[0]
+    var mostExpensiveItem = ("", 0.0, "", "", "")
+    
+    for cart in carts {
+        if cart.processor == processorType && cart.price > highestPrice {
+            mostExpensiveItem = cart
+        }
+    }
+    
+   return mostExpensiveItem
+}
 
+let mostExpProd = mostExpensive(for: "Intel")
+//print("\(mostExpProd)")
 
+let s1 = " ------------------- Найдорожчий товар за процесором \(mostExpProd.processor) -------------------------------"
+let s2 = " Назва товару: \(mostExpProd.productName), Ціна: \(String(format: "%.2f", mostExpProd.price)) \(mostExpProd.currency)"
+let s3 = "-----------------------------------------------------------------------------------------"
+
+print(s1, s2, s3, "\n", separator: "\n")
 
 /*
  
